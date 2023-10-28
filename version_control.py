@@ -26,7 +26,6 @@ def encode(password):
             code += str(new - 6)
         else:
             code += str(new + 3)
-    print(code)
 
     return code
 
