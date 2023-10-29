@@ -23,7 +23,7 @@ def encode(password):
     for i in password:
         new = int(i)
         if new > 6:
-            code += str(new - 6)
+            code += str(new - 7)
         else:
             code += str(new + 3)
 
