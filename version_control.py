@@ -12,10 +12,11 @@ def main():
             print("Your password has been encoded and stored!\n")
             store = encode(password)
         elif option == 2:
-            # edit option 2 to fit your code, just used pass as placeholder
-            pass
+            # Show user previously encoded and now decoded string
+            print(f"The encoded password is {store}, and the original password is {decode(store)}.")
         elif option == 3:
             end = False
+
 
 # Create function to encode
 def encode(password):
@@ -28,6 +29,21 @@ def encode(password):
             code += str(new + 3)
 
     return code
+
+
+# Create decode function
+def decode(password):
+    decoded = ""
+    for i in password:
+        # Subtracts 3 from each character in encoded password
+        n = int(i) - 3
+        # If n goes negative after subtraction number wraps around
+        if n < 0:
+            decoded += str(n + 10)
+        # If n is positive it is just added to the decoded string
+        else:
+            decoded += str(n)
+    return decoded
 
 
 if __name__ == "__main__":
